@@ -12,7 +12,7 @@ function calculate() {
     let input = display.value.trim();
 
     if (input.startsWith("http") || input.includes(".")) {
-        window.location.href = input.includes("://") ? input : "https://" + input;
+        window.location.replace(input.includes("://") ? input : "https://" + input);
     } else {
         try {
             display.value = eval(input);
@@ -22,7 +22,7 @@ function calculate() {
     }
 }
 
-// PWA Install
+// PWA Install Prompt
 let installBtn = document.getElementById("installBtn");
 let deferredPrompt;
 
