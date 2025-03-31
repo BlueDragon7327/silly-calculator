@@ -12,7 +12,7 @@ function calculate() {
     let input = display.value.trim();
 
     if (input.startsWith("http") || input.includes(".")) {
-        window.location.replace(input.includes("://") ? input : "https://" + input);
+        window.open(input.includes("://") ? input : "https://" + input, "_blank", "noopener,noreferrer");
     } else {
         try {
             display.value = eval(input);
